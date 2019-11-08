@@ -11,9 +11,6 @@
         "toc",
         "mapflow"
     ],
-    "licenses": [
-        {}
-    ],
     "main": "main",
     "layer": "module",
     "i18n": [
@@ -63,7 +60,32 @@
                 },
                 "minimizeOnClose": true
             }
-        }],
+        },
+        {
+            "widgetRole": "mapFlow",
+            "template": "seasons",
+            "sublayout": [
+                "desktop"
+            ],
+            "priority": 1,
+            "window": {
+                "windowClass": "noTitleBar",
+                "dockable": true,
+                "dockingBar": "${id}-dockingBarBottomLeft",
+                "marginBox": {
+                    "l": 0,
+                    "h": 260,
+                    "r": 0,
+                    "b": 41
+                },
+                "resizable": false,
+                "draggable": false,
+                "fixEdgesInViewPort": {
+                    "t": false
+                }
+            }
+        }
+    ],
     "components": [{
             "name": "MapFlow",
             "instanceFactory": true,
@@ -117,4 +139,4 @@
             }
         }
     ]
-}
+},
