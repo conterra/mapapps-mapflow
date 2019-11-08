@@ -13,7 +13,7 @@ __t.b.d__
 3. No further configuration needed.
 
 ### Configurable Components of dn_mapflow:
-Refer to bundle's readme.md for detailed information.
+Refer to  [bundle's readme.md](https://github.com/conterra/mapapps-mapflow/blob/master/src/main/js/bundles/dn_mapflow/README.md) for detailed information.
 
 ## Development Guide
 ### Define the mapapps remote base
