@@ -1,0 +1,255 @@
+/*
+ * map.apps 4 - new Props
+ *
+*/
+.winter {
+  /* ========== ContentFlow ========== */
+  /*
+     * This is the basic CSS file needed for the correct functioning of ContentFlow.
+    */
+}
+.winter .ContentFlow {
+  position: relative;
+  /* needed so overlay dimensions are constrained to the ContentFlow */
+  overflow: hidden;
+  top: -40px;
+  /* ----- scrollbar ----- */
+}
+.winter .ContentFlow:hover .mouseoverCheckElement {
+  left: 1px;
+}
+.winter .ContentFlow .scrollbar {
+  position: relative;
+  width: 50%;
+  height: 8px;
+  z-index: 1;
+  margin: 0 auto;
+  border-radius: 4px;
+  border-left: 42px solid #fff;
+  border-right: 42px solid #fff;
+  background-color: #fff;
+}
+.winter .ContentFlow .scrollbar .slider {
+  top: 1px;
+  width: 80px;
+  height: 6px;
+  cursor: move;
+  position: absolute;
+  /* needed */
+  border-radius: 5px;
+  background-color: #232323;
+}
+.winter .ContentFlow .scrollbar .position {
+  display: none;
+}
+.winter .ctToolWindow.ctCollapsed.ctActiveToolIcon_icon-mapflow .ctCollapseOpposite:before {
+  content: '\e046';
+}
+.winter .ctMapFlow {
+  overflow: hidden;
+}
+.winter .ctMapCoverLabel {
+  font-weight: normal;
+  text-align: center;
+  margin: 14px 0 8px;
+}
+.winter .ctMapCover {
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 0.3s linear;
+  border: 3px solid #fff;
+}
+.winter .ctMapCover.ctNotVisibleInScale,
+.winter .ctMapCover.ctNotVisibleInExtent,
+.winter .ctMapCover.ctNotVisibleInSpatialReference {
+  border: 3px solid #c0c0c0;
+  outline-color: #c0c0c0;
+}
+.winter .ctMapCover.ctNotVisibleInScale .ctMapCoverTrackListHeader,
+.winter .ctMapCover.ctNotVisibleInExtent .ctMapCoverTrackListHeader,
+.winter .ctMapCover.ctNotVisibleInSpatialReference .ctMapCoverTrackListHeader {
+  color: #8d8d8d;
+}
+.winter .ctMapCover.ctNotVisibleInScale.ctSelectedTheme .ctThemeCheckbox,
+.winter .ctMapCover.ctNotVisibleInExtent.ctSelectedTheme .ctThemeCheckbox,
+.winter .ctMapCover.ctNotVisibleInSpatialReference.ctSelectedTheme .ctThemeCheckbox {
+  background: #c0c0c0;
+}
+.winter .ctMapCoverRotated {
+  transform: rotateY(180deg);
+}
+.winter .ctMapCoverRotated .ctMapCoverFront,
+.winter .ctMapCoverRotated:after {
+  display: none;
+}
+.winter .ctSelectedTheme {
+  border: 3px solid #3c3c3c;
+  outline: 2px solid #3c3c3c;
+  background-clip: padding-box;
+}
+.winter .ctSelectedTheme:after {
+  color: #3c3c3c;
+  background: #fff;
+  content: '\e60d';
+  font-family: mapappsUiFont;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  pointer-events: none;
+  font-size: 22px;
+  position: absolute;
+  z-index: 151;
+  padding: 3px;
+}
+.winter .ctSelectedTheme .ctMapCoverFront {
+  background: #3c3c3c;
+}
+.winter .ctSelectedTheme .ctThemeCheckbox {
+  background: #3c3c3c;
+}
+.winter .ctSelectedTheme .ctThemeCheckbox:before {
+  content: '\e60d';
+  color: #fff;
+}
+.winter .ctMapCoverSide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.winter .ctMapCoverFront {
+  cursor: pointer;
+  background: gray;
+}
+.winter .ctThemeCheckbox {
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0 3px 3px 0;
+}
+.winter .ctThemeCheckbox:before {
+  font-family: mapappsUiFont;
+  font-size: 22px;
+  font-weight: normal;
+  content: '\e003';
+}
+.winter .ctMapCoverBack {
+  background-color: #fff;
+  transform: rotateY(-180deg);
+}
+.winter .ctMapCoverTrackListHeader {
+  color: #000;
+  border-bottom: 1px solid #dadada;
+  vertical-align: middle;
+  font-weight: bold;
+  font-size: 1.3em;
+}
+.winter .ctMapCoverTitle {
+  margin-left: -30px;
+  display: inline-block;
+  vertical-align: middle;
+  padding-left: 35px;
+  cursor: pointer;
+  font-size: 0.88em;
+  max-width: 140px;
+  white-space: nowrap;
+}
+.winter .ctMapCoverButtonContainer {
+  float: right;
+  margin-right: 3px;
+  margin-top: 3px;
+  backface-visibility: hidden;
+  visibility: visible;
+}
+.winter .ctMapCoverButton {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 13px;
+  font-family: mapappsUiFont;
+}
+.winter .ctMapCoverButton:hover,
+.winter .ctMapCoverButton--checked {
+  color: #111;
+}
+.winter .ctMapCoverButton.icon-cog:before {
+  font-size: 15px;
+}
+.winter .ctMapCoverTrackList {
+  height: 126px;
+  font-size: 12px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow: auto;
+  visibility: visible;
+}
+.winter .ctMapCoverTrackList .dijitTreeContent {
+  cursor: pointer;
+}
+.winter .ctMapCoverTrackList .dijitTreeContent:before {
+  font-size: 15px;
+  font-family: mapappsUiFont;
+  vertical-align: middle;
+}
+.winter .ctMapCoverTrackList .dijitTreeRow {
+  padding-top: 3px;
+  color: #000;
+}
+.winter .ctMapCoverTrackList .dijitTreeRowHover {
+  color: #fff;
+}
+.winter .ctMapCoverTrackList .dijitTreeRowSelected {
+  background: none;
+  border: solid 0 transparent;
+}
+.winter .ctMapCoverTrackList .dijitTreeRowSelected.dijitTreeRowHover {
+  background-color: #3c3c3c;
+}
+.winter .ctMapCoverTrackList .dijitLeaf,
+.winter .ctMapCoverTrackList .dijitFolderClosed,
+.winter .ctMapCoverTrackList .dijitFolderOpened {
+  display: none;
+}
+.winter .ctMapCoverTrackList .dijitTreeExpando {
+  position: relative;
+  left: -2px;
+}
+.winter .ctMapCoverTrackList .ctUnselected .dijitTreeContent:before {
+  content: '\e003';
+}
+.winter .ctMapCoverTrackList .ctSelected .dijitTreeContent:before {
+  content: '\e004';
+}
+.winter .ctMapCoverTrackList .dijitTreeRowHover .dijitTreeContent:before {
+  color: #fff;
+}
+.winter .ctMapCoverTrackList .ctNotVisibleInScale,
+.winter .ctMapCoverTrackList .ctNotVisibleInExtent,
+.winter .ctMapCoverTrackList .ctNotVisibleInSpatialReference {
+  color: #8d8d8d;
+}
+.winter .ctMapCoverTrackList .ctNotVisibleInScale.dijitTreeRowHover,
+.winter .ctMapCoverTrackList .ctNotVisibleInExtent.dijitTreeRowHover,
+.winter .ctMapCoverTrackList .ctNotVisibleInSpatialReference.dijitTreeRowHover {
+  color: #45474d;
+  background-color: #a7a7a7;
+}
+.winter .ctMapCoverDetail {
+  color: #000;
+  padding: 2pt;
+  overflow: auto;
+  height: 128px;
+  font-size: 1.1em;
+}
+.winter.ctEnv_IE .ctThemeCheckbox {
+  margin-top: -1px;
+  margin-left: -1px;
+}

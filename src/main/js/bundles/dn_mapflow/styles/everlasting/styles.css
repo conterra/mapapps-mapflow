@@ -1,0 +1,256 @@
+/*additional mixins*/
+/*
+ * map.apps 4 - new Props
+ *
+*/
+.everlasting {
+  /* ========== ContentFlow ========== */
+  /*
+     * This is the basic CSS file needed for the correct functioning of ContentFlow.
+    */
+}
+.everlasting .ContentFlow {
+  position: relative;
+  /* needed so overlay dimensions are constrained to the ContentFlow */
+  overflow: hidden;
+  top: -40px;
+  /* ----- scrollbar ----- */
+}
+.everlasting .ContentFlow:hover .mouseoverCheckElement {
+  left: 1px;
+}
+.everlasting .ContentFlow .scrollbar {
+  position: relative;
+  width: 50%;
+  height: 8px;
+  z-index: 1;
+  margin: 0 auto;
+  border-radius: 4px;
+  border-left: 42px solid #fff;
+  border-right: 42px solid #fff;
+  background-color: #fff;
+}
+.everlasting .ContentFlow .scrollbar .slider {
+  top: 1px;
+  width: 80px;
+  height: 6px;
+  cursor: move;
+  position: absolute;
+  /* needed */
+  border-radius: 5px;
+  background-color: #43b8f6;
+}
+.everlasting .ContentFlow .scrollbar .position {
+  display: none;
+}
+.everlasting .ctToolWindow.ctCollapsed.ctActiveToolIcon_icon-mapflow .ctCollapseOpposite:before {
+  content: '\e046';
+}
+.everlasting .ctMapFlow {
+  overflow: hidden;
+}
+.everlasting .ctMapCoverLabel {
+  font-weight: normal;
+  text-align: center;
+  margin: 14px 0 8px;
+}
+.everlasting .ctMapCover {
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 0.3s linear;
+  border: 3px solid #fff;
+}
+.everlasting .ctMapCover.ctNotVisibleInScale,
+.everlasting .ctMapCover.ctNotVisibleInExtent,
+.everlasting .ctMapCover.ctNotVisibleInSpatialReference {
+  border: 3px solid #747474;
+  outline-color: #747474;
+}
+.everlasting .ctMapCover.ctNotVisibleInScale .ctMapCoverTrackListHeader,
+.everlasting .ctMapCover.ctNotVisibleInExtent .ctMapCoverTrackListHeader,
+.everlasting .ctMapCover.ctNotVisibleInSpatialReference .ctMapCoverTrackListHeader {
+  color: #8d8d8d;
+}
+.everlasting .ctMapCover.ctNotVisibleInScale.ctSelectedTheme .ctThemeCheckbox,
+.everlasting .ctMapCover.ctNotVisibleInExtent.ctSelectedTheme .ctThemeCheckbox,
+.everlasting .ctMapCover.ctNotVisibleInSpatialReference.ctSelectedTheme .ctThemeCheckbox {
+  background: #747474;
+}
+.everlasting .ctMapCoverRotated {
+  transform: rotateY(180deg);
+}
+.everlasting .ctMapCoverRotated .ctMapCoverFront,
+.everlasting .ctMapCoverRotated:after {
+  display: none;
+}
+.everlasting .ctSelectedTheme {
+  border: 3px solid #12a5f4;
+  outline: 2px solid #12a5f4;
+  background-clip: padding-box;
+}
+.everlasting .ctSelectedTheme:after {
+  color: #12a5f4;
+  background: #fff;
+  content: '\e60d';
+  font-family: mapappsUiFont;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  pointer-events: none;
+  font-size: 22px;
+  position: absolute;
+  z-index: 151;
+  padding: 3px;
+}
+.everlasting .ctSelectedTheme .ctMapCoverFront {
+  background: #12a5f4;
+}
+.everlasting .ctSelectedTheme .ctThemeCheckbox {
+  background: #12a5f4;
+}
+.everlasting .ctSelectedTheme .ctThemeCheckbox:before {
+  content: '\e60d';
+  color: #fff;
+}
+.everlasting .ctMapCoverSide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.everlasting .ctMapCoverFront {
+  cursor: pointer;
+  background: gray;
+}
+.everlasting .ctThemeCheckbox {
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0 3px 3px 0;
+}
+.everlasting .ctThemeCheckbox:before {
+  font-family: mapappsUiFont;
+  font-size: 22px;
+  font-weight: normal;
+  content: '\e003';
+}
+.everlasting .ctMapCoverBack {
+  background-color: #fff;
+  transform: rotateY(-180deg);
+}
+.everlasting .ctMapCoverTrackListHeader {
+  color: #000;
+  border-bottom: 1px solid #48484b;
+  vertical-align: middle;
+  font-weight: bold;
+  font-size: 1.3em;
+}
+.everlasting .ctMapCoverTitle {
+  margin-left: -30px;
+  display: inline-block;
+  vertical-align: middle;
+  padding-left: 35px;
+  cursor: pointer;
+  font-size: 0.88em;
+  max-width: 140px;
+  white-space: nowrap;
+}
+.everlasting .ctMapCoverButtonContainer {
+  float: right;
+  margin-right: 3px;
+  margin-top: 3px;
+  backface-visibility: hidden;
+  visibility: visible;
+}
+.everlasting .ctMapCoverButton {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 13px;
+  font-family: mapappsUiFont;
+}
+.everlasting .ctMapCoverButton:hover,
+.everlasting .ctMapCoverButton--checked {
+  color: #12a5f4;
+}
+.everlasting .ctMapCoverButton.icon-cog:before {
+  font-size: 15px;
+}
+.everlasting .ctMapCoverTrackList {
+  height: 126px;
+  font-size: 12px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow: auto;
+  visibility: visible;
+}
+.everlasting .ctMapCoverTrackList .dijitTreeContent {
+  cursor: pointer;
+}
+.everlasting .ctMapCoverTrackList .dijitTreeContent:before {
+  font-size: 15px;
+  font-family: mapappsUiFont;
+  vertical-align: middle;
+}
+.everlasting .ctMapCoverTrackList .dijitTreeRow {
+  padding-top: 3px;
+  color: #000;
+}
+.everlasting .ctMapCoverTrackList .dijitTreeRowHover {
+  color: #fff;
+}
+.everlasting .ctMapCoverTrackList .dijitTreeRowSelected {
+  background: none;
+  border: solid 0 transparent;
+}
+.everlasting .ctMapCoverTrackList .dijitTreeRowSelected.dijitTreeRowHover {
+  background-color: #12a5f4;
+}
+.everlasting .ctMapCoverTrackList .dijitLeaf,
+.everlasting .ctMapCoverTrackList .dijitFolderClosed,
+.everlasting .ctMapCoverTrackList .dijitFolderOpened {
+  display: none;
+}
+.everlasting .ctMapCoverTrackList .dijitTreeExpando {
+  position: relative;
+  left: -2px;
+}
+.everlasting .ctMapCoverTrackList .ctUnselected .dijitTreeContent:before {
+  content: '\e003';
+}
+.everlasting .ctMapCoverTrackList .ctSelected .dijitTreeContent:before {
+  content: '\e004';
+}
+.everlasting .ctMapCoverTrackList .dijitTreeRowHover .dijitTreeContent:before {
+  color: #fff;
+}
+.everlasting .ctMapCoverTrackList .ctNotVisibleInScale,
+.everlasting .ctMapCoverTrackList .ctNotVisibleInExtent,
+.everlasting .ctMapCoverTrackList .ctNotVisibleInSpatialReference {
+  color: #8d8d8d;
+}
+.everlasting .ctMapCoverTrackList .ctNotVisibleInScale.dijitTreeRowHover,
+.everlasting .ctMapCoverTrackList .ctNotVisibleInExtent.dijitTreeRowHover,
+.everlasting .ctMapCoverTrackList .ctNotVisibleInSpatialReference.dijitTreeRowHover {
+  color: #f8f8f8;
+  background-color: #747474;
+}
+.everlasting .ctMapCoverDetail {
+  color: #000;
+  padding: 2pt;
+  overflow: auto;
+  height: 128px;
+  font-size: 1.1em;
+}
+.everlasting.ctEnv_IE .ctThemeCheckbox {
+  margin-top: -1px;
+  margin-left: -1px;
+}

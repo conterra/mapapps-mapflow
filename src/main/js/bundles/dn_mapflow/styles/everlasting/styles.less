@@ -1,0 +1,277 @@
+@import "../themeSettings.less";
+
+
+//1) external ContentFlow Library
+//2) MapFlowBase
+//3) Cover Front
+//4) Cover Back
+//4.1) Tracklist Header
+//4.2) Tracklist List
+//5) Browser Related Fixes
+
+
+.@{themeName} {
+    //1) external ContentFlow Library
+    /* ========== ContentFlow ========== */
+    /*
+     * This is the basic CSS file needed for the correct functioning of ContentFlow.
+    */
+
+    .ContentFlow {
+        position: relative; /* needed so overlay dimensions are constrained to the ContentFlow */
+        overflow: hidden;
+        top: -40px;
+
+        &:hover .mouseoverCheckElement {
+            left: 1px;
+        }
+
+        /* ----- scrollbar ----- */
+        .scrollbar {
+            position: relative;
+            .size(50%, 8px);
+            z-index: 1;
+            margin: 0 auto;
+            border-radius: 4px;
+            border-left: 42px solid @ct-scrollbar-track-color;
+            border-right: 42px solid @ct-scrollbar-track-color;
+            background-color: @ct-scrollbar-track-color;
+            .slider {
+                top: 1px;
+                width: 80px;
+                height: 6px;
+                cursor: move;
+                position: absolute; /* needed */
+                .border-radius(5px);
+                background-color: @ct-scrollbar-thumb-color;
+            }
+            .position {
+                display: none;
+            }
+        }
+    }
+
+
+    //2) MapFlow Base
+    .ctToolWindow.ctCollapsed.ctActiveToolIcon_icon-mapflow .ctCollapseOpposite:before {
+        content: '\e046';
+    }
+
+    .ctMapFlow {
+        overflow: hidden;
+    }
+    .ctMapCoverLabel {
+        font-weight: normal;
+        text-align: center;
+        margin: 14px 0 8px;
+    }
+
+    //3) MapFlow Cover front:
+    //item ctMapCoverWrapper ctMapCover ctSelectedTheme active
+    .ctMapCover {
+        position: absolute;
+        .transform-style(preserve-3d);
+        .transition(transform, .3s, linear);
+        border: 3px solid @ct-mapflow-cover-border-color;
+
+        &.ctNotVisibleInScale,
+        &.ctNotVisibleInExtent,
+        &.ctNotVisibleInSpatialReference {
+            border: 3px solid @disabled-border-color;
+            outline-color: @disabled-border-color;
+            .ctMapCoverTrackListHeader {
+                color: @disabled-text-color;
+            }
+            &.ctSelectedTheme .ctThemeCheckbox {
+                background: @disabled-border-color;
+            }
+        }
+    }
+
+    .ctMapCoverRotated {
+        transform: rotateY(180deg);
+        .ctMapCoverFront,
+        &:after { display: none }
+    }
+
+    //TODO: rename ctSelectedTheme to ctMapCover--selected
+    .ctSelectedTheme {
+        border: 3px solid @ct-mapflow-selected-cover-border-color;
+        outline: 2px solid @ct-mapflow-selected-cover-border-color;
+        background-clip: padding-box;
+        &:after {
+            color: @ct-mapflow-selected-cover-border-color;
+            background: @ct-icon-on-primary-color;
+            content: '\e60d';
+            .setWebFont();
+            pointer-events: none;
+            font-size: @ct-icon-medium;
+            position: absolute;
+            z-index: 151;
+            padding: 3px;
+        }
+
+        .ctMapCoverFront {
+            background: @ct-mapflow-selected-cover-border-color;
+        }
+        .ctThemeCheckbox {
+            background: @ct-mapflow-selected-cover-border-color;
+            &:before {
+                content: '\e60d';
+                color: @ct-icon-on-primary-color;
+            }
+        }
+    }
+
+    .ctMapCoverSide {
+        position: absolute;
+        .size(100%);
+    }
+
+    .ctMapCoverFront {
+        cursor: pointer;
+        background: gray; //TODO: find a matching color from themeSettings.Less
+    }
+    .ctThemeCheckbox {
+        cursor: pointer;
+        display: inline-block;
+        vertical-align: middle;
+        padding: 0 3px 3px 0;
+        &:before {
+            font-family: mapappsUiFont;
+            font-size: @ct-icon-medium;
+            font-weight: normal;
+            content: '\e003';
+        }
+    }
+
+    //4) Cover Back
+    .ctMapCoverBack {
+        background-color: #fff;
+        transform: rotateY(-180deg);
+    }
+
+    //4.1) TracklistHeader
+    .ctMapCoverTrackListHeader {
+        color: @ct-mapflow-cover-text-color;
+        border-bottom: 1px solid @border-color;
+        vertical-align: middle;
+        font-weight: bold;
+        font-size: 1.3em;
+    }
+    // negative margin to make place for additional Checkbox in Title. tested in all Brwosers and works fine.
+    .ctMapCoverTitle {
+        margin-left: -30px;
+        display: inline-block;
+        vertical-align: middle;
+        padding-left: 35px;
+        cursor: pointer;
+        font-size: .88em;
+        max-width: 140px;
+        white-space: nowrap;
+    }
+    .ctMapCoverButtonContainer {
+        float: right;
+        margin-right: 3px;
+        margin-top: 3px;
+        backface-visibility: hidden;
+        visibility: visible;
+    }
+    .ctMapCoverButton {
+        .size(20px);
+        display: inline-block;
+        cursor: pointer;
+        text-align: center;
+        vertical-align: middle;
+        font-size: @ct-icon-small - 2px;
+        font-family: mapappsUiFont;
+        &:hover,
+        &--checked {
+            color: @ct-icon-hovered-color;
+        }
+        &.icon-cog:before {
+            //NOTE: the webFont Icon provides has a slightly smaller base size.. so we have to set font-size different.
+            font-size: @ct-icon-small;
+        }
+    }
+
+    //4.2) Tracklist List
+    .ctMapCoverTrackList {
+        height: 126px;
+        font-size: 12px;
+        padding-left: 5px;
+        padding-right: 5px;
+        overflow: auto;
+        visibility: visible;
+        .dijitTreeContent {
+            cursor: pointer;
+            &:before {
+                font-size: @ct-icon-small;
+                font-family: mapappsUiFont;
+                vertical-align: middle;
+            }
+        }
+        .dijitTreeRow {
+            padding-top: 3px;
+            color: @ct-mapflow-cover-text-color;
+        }
+        .dijitTreeRowHover {
+            color: @hovered-text-color;
+        }
+        .dijitTreeRowSelected {
+            // no highlighting of last clicked row in map flow
+            background: none;
+            border: solid 0 transparent;
+            &.dijitTreeRowHover {
+                .standard-gradient(@hovered-background-color);
+            }
+        }
+        .dijitLeaf,
+        .dijitFolderClosed,
+        .dijitFolderOpened {
+            display: none;
+        }
+        .dijitTreeExpando {
+            position: relative;
+            left: -2px;
+        }
+        .ctUnselected .dijitTreeContent:before {
+            content: '\e003';
+        }
+        .ctSelected .dijitTreeContent:before {
+            content: '\e004';
+        }
+        .dijitTreeRowHover .dijitTreeContent:before {
+            color: @ct-icon-on-primary-color;
+        }
+
+        .ctNotVisibleInScale,
+        .ctNotVisibleInExtent,
+        .ctNotVisibleInSpatialReference {
+            color: @disabled-text-color;
+            &.dijitTreeRowHover {
+                color: @text-color;
+                background-color: @disabled-background-color;
+            }
+        }
+    }
+    .ctMapCoverDetail {
+        color: @ct-mapflow-cover-text-color;
+        padding: 2pt;
+        overflow: auto;
+        height: 128px;
+        font-size: 1.1em;
+    }
+
+
+    //------------------------- not reworked yet below -------------------------
+
+
+
+    //5) Browser Related Fixes
+    &.ctEnv_IE .ctThemeCheckbox {
+        //fix to encouter IE's blurry half-pixel positions
+        margin-top: -1px;
+        margin-left: -1px;
+    }
+}

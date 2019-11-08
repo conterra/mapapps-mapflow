@@ -1,0 +1,255 @@
+/*
+ * map.apps 4 - new Props
+ *
+*/
+.autumn {
+  /* ========== ContentFlow ========== */
+  /*
+     * This is the basic CSS file needed for the correct functioning of ContentFlow.
+    */
+}
+.autumn .ContentFlow {
+  position: relative;
+  /* needed so overlay dimensions are constrained to the ContentFlow */
+  overflow: hidden;
+  top: -40px;
+  /* ----- scrollbar ----- */
+}
+.autumn .ContentFlow:hover .mouseoverCheckElement {
+  left: 1px;
+}
+.autumn .ContentFlow .scrollbar {
+  position: relative;
+  width: 50%;
+  height: 8px;
+  z-index: 1;
+  margin: 0 auto;
+  border-radius: 4px;
+  border-left: 42px solid #fff;
+  border-right: 42px solid #fff;
+  background-color: #fff;
+}
+.autumn .ContentFlow .scrollbar .slider {
+  top: 1px;
+  width: 80px;
+  height: 6px;
+  cursor: move;
+  position: absolute;
+  /* needed */
+  border-radius: 5px;
+  background-color: #20638f;
+}
+.autumn .ContentFlow .scrollbar .position {
+  display: none;
+}
+.autumn .ctToolWindow.ctCollapsed.ctActiveToolIcon_icon-mapflow .ctCollapseOpposite:before {
+  content: '\e046';
+}
+.autumn .ctMapFlow {
+  overflow: hidden;
+}
+.autumn .ctMapCoverLabel {
+  font-weight: normal;
+  text-align: center;
+  margin: 14px 0 8px;
+}
+.autumn .ctMapCover {
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 0.3s linear;
+  border: 3px solid #fff;
+}
+.autumn .ctMapCover.ctNotVisibleInScale,
+.autumn .ctMapCover.ctNotVisibleInExtent,
+.autumn .ctMapCover.ctNotVisibleInSpatialReference {
+  border: 3px solid #c0c0c0;
+  outline-color: #c0c0c0;
+}
+.autumn .ctMapCover.ctNotVisibleInScale .ctMapCoverTrackListHeader,
+.autumn .ctMapCover.ctNotVisibleInExtent .ctMapCoverTrackListHeader,
+.autumn .ctMapCover.ctNotVisibleInSpatialReference .ctMapCoverTrackListHeader {
+  color: #8d8d8d;
+}
+.autumn .ctMapCover.ctNotVisibleInScale.ctSelectedTheme .ctThemeCheckbox,
+.autumn .ctMapCover.ctNotVisibleInExtent.ctSelectedTheme .ctThemeCheckbox,
+.autumn .ctMapCover.ctNotVisibleInSpatialReference.ctSelectedTheme .ctThemeCheckbox {
+  background: #c0c0c0;
+}
+.autumn .ctMapCoverRotated {
+  transform: rotateY(180deg);
+}
+.autumn .ctMapCoverRotated .ctMapCoverFront,
+.autumn .ctMapCoverRotated:after {
+  display: none;
+}
+.autumn .ctSelectedTheme {
+  border: 3px solid #2980b9;
+  outline: 2px solid #2980b9;
+  background-clip: padding-box;
+}
+.autumn .ctSelectedTheme:after {
+  color: #2980b9;
+  background: #fff;
+  content: '\e60d';
+  font-family: mapappsUiFont;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  pointer-events: none;
+  font-size: 22px;
+  position: absolute;
+  z-index: 151;
+  padding: 3px;
+}
+.autumn .ctSelectedTheme .ctMapCoverFront {
+  background: #2980b9;
+}
+.autumn .ctSelectedTheme .ctThemeCheckbox {
+  background: #2980b9;
+}
+.autumn .ctSelectedTheme .ctThemeCheckbox:before {
+  content: '\e60d';
+  color: #fff;
+}
+.autumn .ctMapCoverSide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.autumn .ctMapCoverFront {
+  cursor: pointer;
+  background: gray;
+}
+.autumn .ctThemeCheckbox {
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0 3px 3px 0;
+}
+.autumn .ctThemeCheckbox:before {
+  font-family: mapappsUiFont;
+  font-size: 22px;
+  font-weight: normal;
+  content: '\e003';
+}
+.autumn .ctMapCoverBack {
+  background-color: #fff;
+  transform: rotateY(-180deg);
+}
+.autumn .ctMapCoverTrackListHeader {
+  color: #000;
+  border-bottom: 1px solid #dadada;
+  vertical-align: middle;
+  font-weight: bold;
+  font-size: 1.3em;
+}
+.autumn .ctMapCoverTitle {
+  margin-left: -30px;
+  display: inline-block;
+  vertical-align: middle;
+  padding-left: 35px;
+  cursor: pointer;
+  font-size: 0.88em;
+  max-width: 140px;
+  white-space: nowrap;
+}
+.autumn .ctMapCoverButtonContainer {
+  float: right;
+  margin-right: 3px;
+  margin-top: 3px;
+  backface-visibility: hidden;
+  visibility: visible;
+}
+.autumn .ctMapCoverButton {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 13px;
+  font-family: mapappsUiFont;
+}
+.autumn .ctMapCoverButton:hover,
+.autumn .ctMapCoverButton--checked {
+  color: #111;
+}
+.autumn .ctMapCoverButton.icon-cog:before {
+  font-size: 15px;
+}
+.autumn .ctMapCoverTrackList {
+  height: 126px;
+  font-size: 12px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow: auto;
+  visibility: visible;
+}
+.autumn .ctMapCoverTrackList .dijitTreeContent {
+  cursor: pointer;
+}
+.autumn .ctMapCoverTrackList .dijitTreeContent:before {
+  font-size: 15px;
+  font-family: mapappsUiFont;
+  vertical-align: middle;
+}
+.autumn .ctMapCoverTrackList .dijitTreeRow {
+  padding-top: 3px;
+  color: #000;
+}
+.autumn .ctMapCoverTrackList .dijitTreeRowHover {
+  color: #fff;
+}
+.autumn .ctMapCoverTrackList .dijitTreeRowSelected {
+  background: none;
+  border: solid 0 transparent;
+}
+.autumn .ctMapCoverTrackList .dijitTreeRowSelected.dijitTreeRowHover {
+  background-color: #2980b9;
+}
+.autumn .ctMapCoverTrackList .dijitLeaf,
+.autumn .ctMapCoverTrackList .dijitFolderClosed,
+.autumn .ctMapCoverTrackList .dijitFolderOpened {
+  display: none;
+}
+.autumn .ctMapCoverTrackList .dijitTreeExpando {
+  position: relative;
+  left: -2px;
+}
+.autumn .ctMapCoverTrackList .ctUnselected .dijitTreeContent:before {
+  content: '\e003';
+}
+.autumn .ctMapCoverTrackList .ctSelected .dijitTreeContent:before {
+  content: '\e004';
+}
+.autumn .ctMapCoverTrackList .dijitTreeRowHover .dijitTreeContent:before {
+  color: #fff;
+}
+.autumn .ctMapCoverTrackList .ctNotVisibleInScale,
+.autumn .ctMapCoverTrackList .ctNotVisibleInExtent,
+.autumn .ctMapCoverTrackList .ctNotVisibleInSpatialReference {
+  color: #8d8d8d;
+}
+.autumn .ctMapCoverTrackList .ctNotVisibleInScale.dijitTreeRowHover,
+.autumn .ctMapCoverTrackList .ctNotVisibleInExtent.dijitTreeRowHover,
+.autumn .ctMapCoverTrackList .ctNotVisibleInSpatialReference.dijitTreeRowHover {
+  color: #45474d;
+  background-color: #a7a7a7;
+}
+.autumn .ctMapCoverDetail {
+  color: #000;
+  padding: 2pt;
+  overflow: auto;
+  height: 128px;
+  font-size: 1.1em;
+}
+.autumn.ctEnv_IE .ctThemeCheckbox {
+  margin-top: -1px;
+  margin-left: -1px;
+}

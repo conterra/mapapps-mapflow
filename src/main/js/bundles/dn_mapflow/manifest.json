@@ -1,9 +1,10 @@
 {
-    "name": "mapflow",
-    "version": "4.8.0-SNAPSHOT",
+    "name": "dn_mapflow",
+    "version": "4.7.2",
     "title": "Map Flow",
     "description": "The Map Flow is used to switch between layer groups which focus on certain themes.",
     "vendor": "con terra GmbH",
+    "productName": "devnet-mapapps-mapflow",
     "icon": {},
     "keywords": [
         "mapping",
@@ -19,18 +20,36 @@
         "bundle"
     ],
     "dependencies": {
-        "dojo": "~1.14.2",
-        "dijit": "~1.14.2",
-        "esri": "~4.13.2",
-        "ct": "~4.8.0-SNAPSHOT",
-        "map-widget": "~4.8.0-SNAPSHOT",
-        "apprt-core": "~4.8.0-SNAPSHOT",
-        "apprt-binding": "~4.8.0-SNAPSHOT"
+        "dojo": "^1.14.2",
+        "dijit": "^1.14.2",
+        "esri": "^4.11.1",
+        "ct": "^4.7.2",
+        "map-widget": "^4.7.2",
+        "apprt-core": "^4.7.2",
+        "apprt-binding": "^4.7.2"
     },
     "optionalDependencies": {
-        "windowmanager": "~4.8.0-SNAPSHOT",
-        "coordinatetransformer": "~4.8.0-SNAPSHOT"
+        "windowmanager": "^4.7.2",
+        "coordinatetransformer": "^4.7.2"
     },
+    "CSS-Themes-Extension": [
+        {
+            "name": "everlasting",
+            "files": ["./styles/everlasting/styles.css"]
+        },{
+            "name": "winter",
+            "files": ["./styles/winter/styles.css"]
+        },{
+            "name": "summer",
+            "files": ["./styles/summer/styles.css"]
+        },{
+            "name": "spring",
+            "files": ["./styles/spring/styles.css"]
+        },{
+            "name": "autumn",
+            "files": ["./styles/autumn/styles.css"]
+        }
+    ],
     "bundle": true,
     "configBundleLocation": "/config",
     "productName": "map.apps",

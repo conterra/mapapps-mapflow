@@ -35,8 +35,7 @@
             "share-link",
             "omnisearch",
             "locator-store",
-            "toc",
-            "sample_helloworld"
+            "dn_mapflow"
         ],
         "require": [
             "${app}.app"
@@ -151,7 +150,297 @@
                     }
                 ],
                 "map": {
-                    "layers": [],
+                    "layers": [
+                        {
+                            "id": "koeln3",
+                            "title": "Recreation",
+                            "url": "https://services.conterra.de/arcgis/rest/services/common/koeln/MapServer",
+                            "type": "AGS_DYNAMIC",
+                            "visible": true,
+                            "sublayers": [
+                                {
+                                    "title": "Tourist Attractions",
+                                    "id": 3,
+                                    "popupTemplate": {
+                                        "title": "Tourist Attraction",
+                                        "content": [
+                                            {
+                                                "type": "text",
+                                                "text": "Tourist attraction <b>{NAME}</b> is located in Cologne's borough {STADTTEIL}."
+                                            },
+                                            {
+                                                "type": "fields",
+                                                "fieldInfos": [
+                                                    {
+                                                        "fieldName": "ADRESSE",
+                                                        "label": "Address"
+                                                    },
+                                                    {
+                                                        "fieldName": "STADTBEZIRK",
+                                                        "label": "Precint"
+                                                    },
+                                                    {
+                                                        "fieldName": "HYPERLINK",
+                                                        "label": "Further Information"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "title": "Playgrounds- and Sports Areas",
+                                    "id": 2,
+                                    "visible": false,
+                                    "popupTemplate": {
+                                        "title": "{Typ}",
+                                        "content": [
+                                            {
+                                                "type": "text",
+                                                "text": "<b>{Spielplatzname}</b> is located in Cologne's borough {Stadtteil}."
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "title": "Places of Event",
+                                    "id": 1,
+                                    "popupTemplate": {
+                                        "title": "Place of Event",
+                                        "content": [
+                                            {
+                                                "type": "text",
+                                                "text": "<b>{NAME}</b> is a place of event."
+                                            },
+                                            {
+                                                "type": "fields",
+                                                "fieldInfos": [
+                                                    {
+                                                        "fieldName": "ADRESSE",
+                                                        "label": "Address"
+                                                    },
+                                                    {
+                                                        "fieldName": "STADTVIERT",
+                                                        "label": "City District"
+                                                    },
+                                                    {
+                                                        "fieldName": "HYPERLINK",
+                                                        "label": "Further Information"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "id": "koeln2",
+                            "title": "Education and Culture",
+                            "url": "https://services.conterra.de/arcgis/rest/services/common/koeln/MapServer",
+                            "type": "AGS_DYNAMIC",
+                            "visible": false,
+                            "sublayers": [
+                                {
+                                    "title": "Libraries",
+                                    "id": 7,
+                                    "popupTemplate": {
+                                        "title": "{NAME_LANG}",
+                                        "content": [
+                                            {
+                                                "type": "fields",
+                                                "fieldInfos": [
+                                                    {
+                                                        "fieldName": "NAME_LANG",
+                                                        "label": "Name"
+                                                    },
+                                                    {
+                                                        "fieldName": "ADRESSE",
+                                                        "label": "Address"
+                                                    },
+                                                    {
+                                                        "fieldName": "PLZ",
+                                                        "label": "Zip code"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "title": "Museums",
+                                    "id": 6,
+                                    "popupTemplate": {
+                                        "title": "Museum",
+                                        "content": [
+                                            {
+                                                "type": "text",
+                                                "text": "Museum <b>{NAME}</b> is located in Cologne's boroughs {STADTTEIL}."
+                                            },
+                                            {
+                                                "type": "fields",
+                                                "fieldInfos": [
+                                                    {
+                                                        "fieldName": "ADRESSE",
+                                                        "label": "Address"
+                                                    },
+                                                    {
+                                                        "fieldName": "STADTBEZIR",
+                                                        "label": "Precint"
+                                                    },
+                                                    {
+                                                        "fieldName": "HYPERLINK",
+                                                        "label": "Further Information"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "title": "Schools",
+                                    "id": 5,
+                                    "popupTemplate": {
+                                        "title": "{NAME}",
+                                        "content": [
+                                            {
+                                                "type": "fields",
+                                                "fieldInfos": [
+                                                    {
+                                                        "fieldName": "SCHULNAME",
+                                                        "label": "Name"
+                                                    },
+                                                    {
+                                                        "fieldName": "ADRESSE",
+                                                        "label": "Address"
+                                                    },
+                                                    {
+                                                        "fieldName": "SCHULART",
+                                                        "label": "Type"
+                                                    },
+                                                    {
+                                                        "fieldName": "TRAEGER",
+                                                        "label": "Provider"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "id": "koeln1",
+                            "title": "Basic Data",
+                            "url": "https://services.conterra.de/arcgis/rest/services/common/koeln/MapServer",
+                            "type": "AGS_DYNAMIC",
+                            "visible": false,
+                            "opacity": 0.5,
+                            "sublayers": [
+                                {
+                                    "title": "City Districts",
+                                    "id": 11,
+                                    "popupTemplate": {
+                                        "title": "{STV_NAME}",
+                                        "content": [
+                                            {
+                                                "type": "text",
+                                                "text": "Cologne's city district <b>{STV_NAME}</b>."
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "title": "Boroughs",
+                                    "id": 10,
+                                    "popupTemplate": {
+                                        "title": "{NAME}",
+                                        "content": [
+                                            {
+                                                "type": "text",
+                                                "text": "Boroughs <b>{NAME}</b> is located in Cologne's precints {STADTBEZIR}."
+                                            },
+                                            {
+                                                "type": "fields",
+                                                "fieldInfos": [
+                                                    {
+                                                        "fieldName": "expression/area",
+                                                        "format": {
+                                                            "places": 2,
+                                                            "digitSeparator": true
+                                                        }
+                                                    },
+                                                    {
+                                                        "fieldName": "expression/area-rel",
+                                                        "format": {
+                                                            "places": 2,
+                                                            "digitSeparator": true
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "expressionInfos": [
+                                            {
+                                                "name": "area",
+                                                "title": "Area [ha]",
+                                                "expression": "$feature.FLAECHE / 10000"
+                                            },
+                                            {
+                                                "name": "area-rel",
+                                                "title": "Percentage of the total area [%]",
+                                                "expression": "Round(($feature.FLAECHE / 405020000)*100,2)"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "title": "Precints",
+                                    "id": 9,
+                                    "popupTemplate": {
+                                        "title": "{NAME}",
+                                        "content": [
+                                            {
+                                                "type": "text",
+                                                "text": "Cologne's precint <b>{NAME}</b>."
+                                            },
+                                            {
+                                                "type": "fields",
+                                                "fieldInfos": [
+                                                    {
+                                                        "fieldName": "expression/area",
+                                                        "format": {
+                                                            "places": 2,
+                                                            "digitSeparator": true
+                                                        }
+                                                    },
+                                                    {
+                                                        "fieldName": "expression/area-rel",
+                                                        "format": {
+                                                            "places": 2,
+                                                            "digitSeparator": true
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "expressionInfos": [
+                                            {
+                                                "name": "area",
+                                                "title": "Area [ha]",
+                                                "expression": "$feature.FLAECHE / 10000"
+                                            },
+                                            {
+                                                "name": "area-rel",
+                                                "title": "Percentage of the total area [%]",
+                                                "expression": "Round(($feature.FLAECHE / 405020000)*100,2)"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    ],
                     "ground": {
                         "url": "https://elevation3d.arcgis.com/arcgis/rest/services/WorldElevation3D/Terrain3D/ImageServer",
                         "type": "ELEVATION"
@@ -255,7 +544,7 @@
                             "tocToggleTool",
                             "printingToggleTool",
                             "sharelinkTool",
-                            "helloTool",
+                            "mapflowToggleTool",
                             "IMPRINT_Imprint_CustomInfoTool",
                             "IMPRINT_Imprint_CustomInfoTool_mobile"
                         ],
