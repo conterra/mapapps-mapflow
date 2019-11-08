@@ -1,6 +1,6 @@
 {
     "name": "dn_mapflow",
-    "version": "$MVN_RELEASE_VERSION",
+    "version": "1.0.0-SNAPSHOT",
     "title": "Map Flow",
     "description": "The Map Flow is used to switch between layer groups which focus on certain themes.",
     "vendor": "con terra GmbH",

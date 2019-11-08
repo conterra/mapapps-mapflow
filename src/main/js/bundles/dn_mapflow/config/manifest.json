@@ -1,6 +1,6 @@
 {
     "name": "mapflow-config",
-    "version": "$MVN_RELEASE_VERSION",
+    "version": "1.0.0-SNAPSHOT",
     "title": "Map Flow-Config",
     "description": "This bundle provides the configuration components for the Map Flow bundle.",
     "dependencies": {
