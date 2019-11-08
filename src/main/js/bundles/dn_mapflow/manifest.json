@@ -1,0 +1,101 @@
+{
+    "name": "mapflow",
+    "version": "4.8.0-SNAPSHOT",
+    "title": "Map Flow",
+    "description": "The Map Flow is used to switch between layer groups which focus on certain themes.",
+    "vendor": "con terra GmbH",
+    "icon": {},
+    "keywords": [
+        "mapping",
+        "toc",
+        "mapflow"
+    ],
+    "licenses": [
+        {}
+    ],
+    "main": "main",
+    "layer": "module",
+    "i18n": [
+        "bundle"
+    ],
+    "dependencies": {
+        "dojo": "~1.14.2",
+        "dijit": "~1.14.2",
+        "esri": "~4.13.2",
+        "ct": "~4.8.0-SNAPSHOT",
+        "map-widget": "~4.8.0-SNAPSHOT",
+        "apprt-core": "~4.8.0-SNAPSHOT",
+        "apprt-binding": "~4.8.0-SNAPSHOT"
+    },
+    "optionalDependencies": {
+        "windowmanager": "~4.8.0-SNAPSHOT",
+        "coordinatetransformer": "~4.8.0-SNAPSHOT"
+    },
+    "bundle": true,
+    "configBundleLocation": "/config",
+    "productName": "map.apps",
+    "layout-widgets": [{
+            "widgetRole": "mapFlow",
+            "window": {
+                "dockTool": "mapflowToggleTool",
+                "marginBox": {
+                    "h": 260,
+                    "w": 750
+                },
+                "minimizeOnClose": true
+            }
+        }],
+    "components": [{
+            "name": "MapFlow",
+            "instanceFactory": true,
+            "provides": ["dijit.Widget"],
+            "properties": {
+                "widgetRole": "mapFlow",
+                "-nodeDepth": 2,
+                "-showScrollBar": true,
+                "-singleSelectionMode": true,
+                "-autoFlipActiveCover": false,
+                "-autoEnable": false,
+                "-autoZoomTo": false,
+                "-reactOnNewFrontCoverTimeout": 500,
+                "-contentFlowProperties": {
+                    "useAddOns": false,
+                    "circularFlow": true,
+                    "reflectionHeight": 0,
+                    "maxItemHeight": 200,
+                    "relativeItemPosition": "top center",
+                    "visibleItems": 3
+                }
+            },
+            "references": [{
+                    "name": "_mapWidgetModel",
+                    "providing": "map-widget.MapWidgetModel"
+                },
+                {
+                    "name": "_windowManager",
+                    "providing": "ct.framework.api.WindowManager",
+                    "cardinality": "0..1"
+                }, {
+                    "name": "_coordinateTransformer",
+                    "providing": "ct.api.coordinatetransformer.CoordinateTransformer",
+                    "cardinality": "0..1"
+                }]
+        }, {
+            "name": "MapFlowToggleTool",
+            "impl": "ct/tools/Tool",
+            "provides": ["ct.tools.Tool"],
+            "propertiesConstructor": true,
+            "properties": {
+                "id": "mapflowToggleTool",
+                "title": "${tool.title}",
+                "tooltip": "${tool.tooltip}",
+                "iconClass": "icon-mapflow",
+                "toolRole": "toolset",
+                "togglable": true,
+                "rules": {
+                    "noGroup": true
+                }
+            }
+        }
+    ]
+}

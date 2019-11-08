@@ -1,0 +1,46 @@
+{
+    "dataform-version": "1.0.0",
+    "type": "gridpanel",
+    "showLabels": true,
+    "cols": 1,
+    "children": [{
+            "type": "checkbox",
+            "field": "singleSelectionMode",
+            "title": "${widget.singleSelectionMode.title}",
+            "tooltip": "${widget.singleSelectionMode.tooltip}"
+        }, {
+            "type": "checkbox",
+            "field": "autoZoomTo",
+            "title": "${widget.autoZoomTo.title}",
+            "tooltip": "${widget.autoZoomTo.tooltip}"
+        }, {
+            "type": "numberspinner",
+            "min": 3,
+            "field": "contentFlowProperties.visibleItems",
+            "title": "${widget.visibleItems.title}",
+            "tooltip": "${widget.visibleItems.tooltip}",
+            "required": true
+        }, {
+            "type": "numberspinner",
+            "min": 1,
+            "field": "nodeDepth",
+            "title": "${widget.nodeDepth.title}",
+            "tooltip": "${widget.nodeDepth.tooltip}",
+            "required": true
+        }, {
+            "type": "checkbox",
+            "field": "showScrollBar",
+            "title": "${widget.showScrollBar.title}",
+            "tooltip": "${widget.showScrollBar.tooltip}"
+        }, {
+            "type": "checkbox",
+            "field": "autoFlipActiveCover",
+            "title": "${widget.autoFlipActiveCover.title}",
+            "tooltip": "${widget.autoFlipActiveCover.tooltip}"
+        }, {
+            "type": "checkbox",
+            "field": "autoActivate",
+            "title": "${widget.autoActivate.title}",
+            "tooltip": "${widget.autoActivate.tooltip}"
+        }]
+}

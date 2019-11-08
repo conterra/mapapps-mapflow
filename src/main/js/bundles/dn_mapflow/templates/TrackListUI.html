@@ -1,0 +1,14 @@
+<div>
+    <div class="ctMapCoverTrackListHeader">
+        <div class ="ctThemeCheckbox"></div>
+        <div class="ctMapCoverTitle shortenText" data-dojo-attach-point="titleNode" data-dojo-attach-event="ondijitclick:_onTitleClick"></div>
+        <div class="ctMapCoverButtonContainer">
+            <div class="icon-map-center ctMapCoverButton dijitDisplayNone" data-dojo-attach-point="zoomToNode" data-dojo-attach-event="ondijitclick:_onZoomToClick"></div>
+            <div class="icon-info ctMapCoverButton ctCategoryInfoBack" data-dojo-attach-point="showDetailNode" data-dojo-attach-event="ondijitclick:_onShowDetailClick"></div>
+            <div class="icon-cog ctMapCoverButton  dijitDisplayNone" data-dojo-attach-point="sliderNode" data-dojo-attach-event="ondijitclick:_onTransparencySliderClick"></div>
+            <div class="icon-turn-left ctMapCoverButton ctMapCoverRotatorBack  " data-dojo-attach-point="rotatorNode" data-dojo-attach-event="ondijitclick:_onShowFrontClick"></div>
+        </div>
+    </div>
+    <div data-dojo-type="dijit/Tree" data-dojo-props="model:this.treeModel,_createTreeNode:this._createTreeNode,'class':'ctMapCoverTrackList dijitDisplayNone',persist:false,showRoot:false" data-dojo-attach-point="trackList" data-dojo-attach-event="onClick:_onNodeClick"></div>
+    <div class="ctMapCoverDetail dijitDisplayNone selectable" data-dojo-attach-point="detailNode"></div>
+</div>
