@@ -4,10 +4,10 @@
     "title": "Map Flow-Config",
     "description": "This bundle provides the configuration components for the Map Flow bundle.",
     "dependencies": {
-        "wizard": "~4.8.0-SNAPSHOT"
+        "wizard": "^4.7.2"
     },
     "optionalDependencies": {
-        "dataform": "~4.8.0-SNAPSHOT"
+        "dataform": "^4.7.2"
     },
     "productName": "map.apps",
     "bundle" : true,
@@ -38,8 +38,8 @@
             "instanceFactory": true,
             "properties": {
                 "dataformFile": "resource('./DataForm.json')",
-                "bid": "mapflow",
-                "pid": "mapflow-MapFlow",
+                "bid": "dn_mapflow",
+                "pid": "dn_mapflow-MapFlow",
                 "id": "mapFlowBuilderWidget",
                 "defaultProperties": {
                     "nodeDepth": 2,
