@@ -1,7 +1,8 @@
 # mapapps-mapflow
 mapapps-mapflow provides a widget for switching between the operational layers of the map.
+
 ## Sample App
-__t.b.d__
+https://demos.conterra.de/mapapps/resources/apps/downloads_mapflow/index.html
 
 ![Screenshot Sample App Mapflow](https://github.com/conterra/mapapps-mapflow/blob/master/screenshot.PNG)
 
