@@ -1,3 +1,4 @@
+⚠️ This bundle is no longer in active development.
 # mapapps-mapflow
 mapapps-mapflow provides a widget for switching between the operational layers of the map.
 
